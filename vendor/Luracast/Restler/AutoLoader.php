@@ -68,7 +68,8 @@ class AutoLoader
     public static function thereCanBeOnlyOne() {
         if (static::$perfectLoaders === spl_autoload_functions())
             return static::$instance;
-
+	
+	/*
         if (false !== $loaders = spl_autoload_functions())
             if (0 < $count = count($loaders))
                 for ($i = 0, static::$rogueLoaders += $loaders;
@@ -76,7 +77,7 @@ class AutoLoader
                      $i++)
                     if ($loader !== static::$perfectLoaders[0])
                         spl_autoload_unregister($loader);
-
+	*/
         return static::$instance;
     }
 
